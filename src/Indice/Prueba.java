@@ -34,5 +34,11 @@ public class Prueba {
         } while (i <= num);
         System.out.println("");
     }
-
+/*warning: [options] system modules path not set in conjunction with -source 18
+1 warning
+compile:
+run:
+0 1 2 3 4 5 6 7 8 9 10 
+0 1 2 3 4 5 6 7 8 9 10 
+0 1 2 3 4 5 6 7 8 9 10 */
 }
