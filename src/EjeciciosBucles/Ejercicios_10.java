@@ -157,7 +157,6 @@ public class Ejercicios_10 {
                 System.out.print(i + " ");
             }
         }
-        System.out.println("");
         System.out.println("-----------");
 
     }
