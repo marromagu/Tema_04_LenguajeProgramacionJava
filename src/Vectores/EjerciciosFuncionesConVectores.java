@@ -91,7 +91,7 @@ public class EjerciciosFuncionesConVectores {
     }
 
     public static int maximo(int[] v) {
-        int max = 0;
+        int max = v[0];
         for (int i = 0; i < v.length; i++) {
             if (v[i] > max) {
                 max = v[i];
@@ -102,7 +102,7 @@ public class EjerciciosFuncionesConVectores {
     }
 
     public static int minimo(int[] v) {
-        int min = maximo(v);
+        int min = v[0];
         for (int i = 0; i < v.length; i++) {
             if (v[i] < min) {
                 min = v[i];
