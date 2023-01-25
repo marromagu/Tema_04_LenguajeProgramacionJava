@@ -153,11 +153,11 @@ public class Ejercicios_10 {
         int dividendo = tecl.nextInt();
 
         for (int i = pequeño; i <= grande; i++) {
-            if (i % dividendo == 0) {
+            if (dividendo % i == 0) {
                 System.out.print(i + " ");
             }
         }
-        System.out.println("-----------");
+        System.out.println("\n-----------");
 
     }
 
@@ -218,7 +218,7 @@ public class Ejercicios_10 {
             System.out.print("Introduzca un número : ");
             num = Integer.parseInt(teclado.nextLine());
             if (num > 0) {
-                suma = suma + num;
+                suma = suma + num;// -->   suma += suma;
             }
 
         } while (num > 0);
@@ -233,7 +233,7 @@ public class Ejercicios_10 {
         System.out.println("Ejercicio 8");
         System.out.println("-----------");
         System.out.println();
-        int numSecreto = (int) (Math.random() * 20);
+        int numSecreto = (int) (Math.random() * 21);
         int num = -1;
         do {
             System.out.println("Adivina el numero secreto");

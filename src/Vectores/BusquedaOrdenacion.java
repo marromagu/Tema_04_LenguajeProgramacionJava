@@ -55,34 +55,39 @@ public class BusquedaOrdenacion {
                     ordenaBurbuja(vector);
                     System.out.println("\nAlgoritmo de ordenacion de la burbuja");
                     break;
+
                 case 8:
-                    ordenar(vector);
+
+                    mostrar(vector);
                     System.out.println("¿Que numero deseas insertar?");
                     n = Integer.parseInt(leer.nextLine());
-                     posicion = busquedaBinaria(vector, n);
+                    posicion = busquedaBinaria(vector, n);
                     // No existe en el array el valor a insertar
                     if (posicion == -1) {
                         // Si hay hueco para el valor a insertar: no es mayor que el último
-                        if (vector.length > n) {
+                        if (vector[vector.length - 1] > n) {
                             posicion = busquedaHueco(vector, n);
-                            desplazarDerecha(vector, n);
+                            desplazarDerecha(vector, posicion);
                             vector[posicion] = n;
-                        } 
+                        }
                     }
+                    mostrar(vector);
                     break;
                 case 9:
-                    ordenar(vector);
+
+                    mostrar(vector);
                     System.out.println("¿Que numero deseas eliminar?");
                     n = Integer.parseInt(leer.nextLine());
-                     posicion = busquedaBinaria(vector, n);
-                     // Muestra la posición si es distinta de "-1"
-                     if (posicion != -1) {
-                        desplazarIzquierda(vector,n);
-                    }else{
-                         System.out.println("No existe el elemento a borrar.");
-                     }
+                    posicion = busquedaBinaria(vector, n);
+                    // Muestra la posición si es distinta de "-1"
+                    if (posicion != -1) {
+                        desplazarIzquierda(vector, posicion);
+                        vector[vector.length - 1] = -1;
+                    } else {
+                        System.out.println("No existe el elemento a borrar.");
+                    }
+                    mostrar(vector);
                     break;
-
                 default://No hacer nada
             }
         } while (op != 0);
@@ -223,7 +228,8 @@ public class BusquedaOrdenacion {
     public static void desplazarDerecha(int[] v, int pos) {
         // Función que desplaza a la derecha el contenido de un array
         // a partir de la posición "pos"
-        for (int i = (v.length - 1); i < (pos + 1); i--) {
+        for (int i = (v.length - 1); i > pos; i--) {
+
             v[i] = v[i - 1];
         }
     }
