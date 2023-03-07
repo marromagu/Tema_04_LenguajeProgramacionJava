@@ -180,7 +180,7 @@ public class BusquedaOrdenacion {
         der = v.length - 1;
         encontrado = false;
         while ((izq <= der) && (!encontrado)) {
-            centro = (izq + der) / 2;
+            centro = (int)(izq + der) / 2;
             if (v[centro] == n) {
                 encontrado = true; // Verdadero
             } else if (n > v[centro]) {
